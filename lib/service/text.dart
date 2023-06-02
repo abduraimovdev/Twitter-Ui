@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class MyText extends StatelessWidget {
   final String text;
-  const MyText({
+  const  MyText({
     super.key,
     required this.text,
   });
@@ -20,7 +20,7 @@ class MyText extends StatelessWidget {
         style: TextStyle(fontSize: 16),
         children: sorted(text),
       ),
-    );
+    ); 
   }
 }
 
@@ -39,6 +39,19 @@ List<TextSpan> sorted(String text) {
             color: Colors.blue,
           ),
           text: item,
+          recognizer: TapGestureRecognizer()
+            ..onTap = () {
+              debugPrint(item);
+            },
+        ),
+      );
+    } else if (item[0] == "@") {
+      widgetList.add(
+        TextSpan(
+          style: const TextStyle(
+            color: Colors.blue, 
+          ),
+          text: item,   
           recognizer: TapGestureRecognizer()
             ..onTap = () {
               debugPrint(item);

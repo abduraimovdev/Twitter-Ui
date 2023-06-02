@@ -16,6 +16,7 @@ class _RunnerState extends State<Runner> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MainPage(),
     );
   }
